@@ -3701,7 +3701,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 processBtn.innerHTML = `<i class="bi bi-check-lg me-1"></i> Completed`;
             } finally {
                 processBtn.disabled = false;
-                setTimeout(() => progressDiv.classList.add('d-none'), 800);
+                setTimeout(() => {
+                    progressDiv.classList.add('d-none');
+                    if (!successArea.classList.contains('d-none')) {
+                        downloadBtn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                    }
+                }, 800);
             }
         });
     }
@@ -4026,7 +4031,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 processBtn.innerHTML = `<i class="bi bi-check-lg me-1"></i> Completed`;
             } finally {
                 processBtn.disabled = false;
-                setTimeout(() => progressDiv.classList.add('d-none'), 800);
+                setTimeout(() => {
+                    progressDiv.classList.add('d-none');
+                    if (!successArea.classList.contains('d-none')) {
+                        downloadBtn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                    }
+                }, 800);
             }
         });
     }

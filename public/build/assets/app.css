@@ -753,13 +753,48 @@ pre {
     .d-xl-grid   { display: grid !important; }
 }
 
-/* Keep every tool's result and download action inside the workspace. */
+/* Keep every tool's result and download action inside the workspace.
+ * minmax(0, 1fr) lets long filenames shrink instead of pushing the action out.
+ * Override Bootstrap's d-flex utility on the result container only.
+ */
+#staticPdfSuccessArea {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: 100%;
+    scroll-margin-block: 1rem;
+}
+
+#staticPdfSuccessArea.d-none {
+    display: none !important;
+}
+
+#staticPdfToolModal .modal-dialog {
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+}
+
+#staticPdfToolModal .modal-content {
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+}
+
+#staticPdfToolModal .modal-body {
+    min-height: 0;
+    overflow-y: auto;
+}
+
+#staticPdfToolModal .modal-header,
+#staticPdfToolModal .modal-footer {
+    flex-shrink: 0;
+}
 #staticPdfSuccessArea > div,
 #staticPdfSuccessArea > div > div {
     min-width: 0;
 }
 
 #staticSuccessMsg {
+    display: block;
+    white-space: normal;
     overflow-wrap: anywhere;
 }
 
@@ -771,7 +806,11 @@ pre {
     justify-content: center;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
+    #staticPdfSuccessArea {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     #staticPdfToolModal .modal-dialog {
         height: calc(100% - 1rem);
         height: calc(100dvh - 1rem);
@@ -800,11 +839,6 @@ pre {
     #staticPdfToolModal .btn-close,
     #staticModalIcon {
         flex-shrink: 0;
-    }
-
-    #staticPdfSuccessArea {
-        flex-direction: column;
-        align-items: stretch !important;
     }
 
     #staticDownloadBtn {
