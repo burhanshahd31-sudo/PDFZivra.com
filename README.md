@@ -10,6 +10,18 @@ pinned: false
 
 # PDFMaster — All-in-One SaaS PDF Suite, Forms Center & Subscription Platform
 
+## Netlify static deployment
+
+Netlify publishes the committed `public/` static export. Its HTML pages and referenced
+branding, illustrations, CSS, and JavaScript are included, so no Laravel or Vite
+build is required. The deploy command checks that `public/index.html` exists.
+Composer scripts are disabled on Netlify because this export does not include the
+Laravel application bootstrap. Netlify does not execute PHP; Laravel routes, PDF
+processing, accounts, and payments require a separate PHP backend and are not
+provided by this static deployment. Update the files in `public/` when publishing
+a new static export. Do not publish the repository root or entire deployment
+archives, which contain server files and private uploads.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
 </p>
