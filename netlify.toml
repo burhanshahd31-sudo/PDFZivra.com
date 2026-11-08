@@ -1,0 +1,15 @@
+# Netlify Configuration for PDFMaster
+# Site: https://pdftools-gov.netlify.app
+
+[build]
+  command = "echo 'Static website ready for Netlify publish'"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Fallback redirect for Single Page Application / Static routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

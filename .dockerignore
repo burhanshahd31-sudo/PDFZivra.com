@@ -1,0 +1,13 @@
+vendor/
+node_modules/
+.git/
+.env
+.phpunit.result.cache
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+tests/
+RUN_SERVER.bat
+START_SERVER.bat
+scratch/
