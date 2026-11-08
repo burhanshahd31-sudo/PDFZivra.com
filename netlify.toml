@@ -1,12 +1,13 @@
-# Netlify Configuration for PDFMaster
-# Site: https://pdftools-gov.netlify.app
+# Netlify serves the committed static export, not the Laravel application.
 
 [build]
-  command = "echo 'Static website ready for Netlify publish'"
+  command = "test -f public/index.html"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "20"
+  # The static export does not need Artisan or a PHP application bootstrap.
+  COMPOSER_FLAGS = "--no-scripts"
 
 # Fallback redirect for Single Page Application / Static routing
 [[redirects]]

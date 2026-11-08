@@ -13,7 +13,7 @@
 /.zed
 /auth.json
 /node_modules
-/public/build
+# These precompiled assets belong to the committed static export.
 /public/hot
 /public/storage
 /storage/*.key
