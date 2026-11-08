@@ -752,3 +752,74 @@ pre {
     .d-xl-flex   { display: flex !important; }
     .d-xl-grid   { display: grid !important; }
 }
+
+/* Keep every tool's result and download action inside the workspace. */
+#staticPdfSuccessArea > div,
+#staticPdfSuccessArea > div > div {
+    min-width: 0;
+}
+
+#staticSuccessMsg {
+    overflow-wrap: anywhere;
+}
+
+#staticDownloadBtn {
+    flex-shrink: 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 575.98px) {
+    #staticPdfToolModal .modal-dialog {
+        height: calc(100% - 1rem);
+        height: calc(100dvh - 1rem);
+    }
+
+    #staticPdfToolModal .modal-content {
+        max-height: 100%;
+    }
+
+    #staticPdfToolModal .modal-body {
+        overflow-y: auto;
+        min-height: 0;
+        padding: 1rem !important;
+    }
+
+    #staticPdfToolModal .modal-header > div,
+    #staticPdfToolModal .modal-header > div > div {
+        min-width: 0;
+    }
+
+    #staticPdfToolModal .modal-header .badge {
+        white-space: normal;
+        text-align: left;
+    }
+
+    #staticPdfToolModal .btn-close,
+    #staticModalIcon {
+        flex-shrink: 0;
+    }
+
+    #staticPdfSuccessArea {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    #staticDownloadBtn {
+        width: 100%;
+        white-space: normal !important;
+    }
+
+    #staticPdfToolModal .modal-footer {
+        gap: 0.5rem;
+        padding: 0.75rem 1rem !important;
+    }
+
+    #staticProcessActionBtn {
+        flex: 1 1 100%;
+        white-space: normal;
+        min-height: 44px;
+    }
+}
